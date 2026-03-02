@@ -1,5 +1,5 @@
 {
-    "intent" :[
+    "intents" :[
         {
             "tag" : "greeting",
             "patterns" : [
@@ -7,10 +7,186 @@
                 "Hello",
                 "Hey",
                 "Good morning",
-                "What's up"
+                "What's up",
+                "Yo",
+                "Good Evening",
+                "Good Afternoon",
+                "Hey Buddy",
+                "Hi there"
             ],
             "responses" : [
                 "Hello! How can I help with your fitness goals today?"
+            ]
+        },
+
+        {
+            "tag" : "goodbye",
+            "patterns" : [
+                "Bye",
+                "Goodbye",
+                "See you",
+                "Catch you later",
+                "Talk to you later",
+                "I'm leaving",
+                "See ya",
+                "Have a good day",
+                "Peace out",
+                "Later"
+            ],
+            "responses" : [
+                "Goodbye !! Stay fit and stay consistent"
+            ]
+        },
+
+        {
+            "tag" : "weight_loss",
+            "patterns" : [
+                "How do I lose weight?",
+                "I want to burn fat",
+                "Best workouts for fat loss",
+                "How can I slim down?",
+                "Exercises for weight loss",
+                "Help me reduce belly fat",
+                "Tips to lose body fat",
+                "Cardio for weight loss",
+                "How to drop weight fast",
+                "Fat burning workouts"
+            ],
+            "responses" : [
+                "To lose weight effectively:\n\n1️⃣ Create a calorie deficit (eat slightly fewer calories than you burn).\n2️⃣ Combine strength training (3–4x/week) with cardio (20–30 mins).\n3️⃣ Prioritize protein intake to preserve muscle.\n4️⃣ Get 7–8 hours of sleep.\n\nWould you like a beginner fat-loss workout plan?"
+            ]
+        },
+
+        {
+            "tag" : "muscle_gain",
+            "patterns" : [
+                "How do I gain muscle?",
+                "Best workouts for muscle growth",
+                "I want to bulk up",
+                "How to build muscle fast",
+                "Strength training advice",
+                "How to increase muscle mass",
+                "Bulking workout plan",
+                "Exercises for muscle gain",
+                "How to get bigger arms",
+                "Tips for hypertrophy"
+            ],
+            "responses" : [
+                "To build muscle efficiently:\n\n1️⃣ Train with progressive overload (increase weight gradually).\n2️⃣ Focus on compound lifts (squats, bench press, deadlifts).\n3️⃣ Consume 1.6–2.2g of protein per kg of body weight.\n4️⃣ Eat in a slight calorie surplus.\n5️⃣ Rest each muscle group 48 hours before retraining.\n\nWould you like a sample weekly gym split?"
+            ]
+        },
+
+        {
+            "tag" : "bmi_calculation",
+            "patterns" : [
+                "Calculate my BMI",
+                "What is my BMI?",
+                "Can you check my BMI?",
+                "Help me find my BMI",
+                "BMI calculation",
+                "How do I calculate BMI?",
+                "Tell me my body mass index",
+                "Check my body weight category",
+                "Is my BMI healthy?",
+                "BMI check"
+            ],
+            "responses" : [
+                "temp"
+            ]
+        },
+
+        {
+            "tag" : "calorie_calculation",
+            "patterns" : [
+                "How many calories should I eat?",
+                "Calculate my daily calories",
+                "Calorie requirement",
+                "How many calories do I need?",
+                "Daily calorie intake",
+                "Find my maintenance calories",
+                "Calorie calculator",
+                "How much should I eat per day?",
+                "Energy needs calculation",
+                "Calorie estimate"
+            ],
+            "responses" : [
+                "temp"
+            ]
+        },
+
+        {
+            "tag" : "protein_sources",
+            "patterns" : [
+                "Best protein foods",
+                "High protein diet",
+                "Sources of protein",
+                "Protein rich foods",
+                "What should I eat for protein?",
+                "Vegetarian protein sources",
+                "How to increase protein intake?",
+                "Protein options",
+                "Good protein meals",
+                "Protein recommendations"
+            ],
+            "responses" : [
+                "temp"
+            ]
+        },
+
+        {
+            "tag" : "home_workout",
+            "patterns" : [
+                "Workout at home",
+                "Home exercise routine",
+                "No equipment workout",
+                "Bodyweight exercises",
+                "Workout without gym",
+                "Home fitness plan",
+                "Exercises I can do at home",
+                "Beginner home workout",
+                "Quick home workout",
+                "Home training routine"
+            ],
+            "responses" : [
+                "temp"
+            ]
+        },
+
+        {
+            "tag" : "gym_workout",
+            "patterns" : [
+                "Gym workout plan",
+                "Best gym exercises",
+                "Workout routine for gym",
+                "How to train at gym?",
+                "Gym schedule",
+                "Weight training routine",
+                "Gym split routine",
+                "Push pull legs workout",
+                "Upper lower split",
+                "Strength workout at gym"
+            ],
+            "responses" : [
+                "temp"
+            ]
+        },
+
+        {
+            "tag" : "motivation",
+            "patterns" : [
+                "I feel lazy",
+                "Motivate me",
+                "I don't feel like working out",
+                "How to stay consistent?",
+                "I want to quit gym",
+                "I'm losing motivation",
+                "Push me to train",
+                "How to stay disciplined?",
+                "Help me stay focused",
+                "I need workout motivation"
+            ],
+            "responses" : [
+                "temp"
             ]
         }
     ]
