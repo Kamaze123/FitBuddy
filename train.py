@@ -26,11 +26,12 @@ X_train, X_test, y_train, y_test = train_test_split(
     X.toarray(), y, test_size = 0.2, random_state=42
 )
 
+
 #Train Neural Network
 model = Sequential([
-    Dense(128, activation='relu', input_shape=(X_train.shape[1],),  kernel_regularizer=regularizers.l2(0.001)),
+    Dense(64, activation='relu', input_shape=(X_train.shape[1],),  kernel_regularizer=regularizers.l2(0.001)),
     Dropout(0.4),
-    Dense(64, activation='relu',  kernel_regularizer=regularizers.l2(0.001)),
+    Dense(32, activation='relu',  kernel_regularizer=regularizers.l2(0.001)),
     Dropout(0.3),
     Dense(y.shape[1], activation='softmax')
 ])
