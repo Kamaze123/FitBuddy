@@ -1,6 +1,8 @@
 import numpy as np
 import tensorflow as tf
 import pickle
+import json
+import random
 import re
 
 # Load trained model
@@ -13,17 +15,28 @@ with open("model/vectorizer.pkl", "rb") as f:
 with open("model/label_encoder.pkl", "rb") as f:
     label_encoder = pickle.load(f)
 
-conversation_state= None
-user_data={}
+#Load intents
+with open("data/intents.json", "r", encoding="utf-8") as file:
+    intents = json.load(file)
+
+user_states = {}
+user_data = {}
 
 #Intent prediction
 def predict_intent(text):
     X = vectorizer.transform([text]).toarray()
-    prediction = model.predict(X)
+    prediction = model.predict(X, verbose = 0)
     tag_index = np.argmax(prediction)
     tag = label_encoder.inverse_transform([tag_index])[0]
     confidence = np.max(prediction)
     return tag, confidence
+
+#Response from intent prediction
+def get_response(tag):
+    for intent in intents["intents"]:
+        if intent["tag"] == tag:
+            return random.choice(intent["responses"])
+    return "Sorry, I don't understand."
 
 #BMI function
 def calculate_bmi(height_cm, weight_kg):
@@ -31,59 +44,92 @@ def calculate_bmi(height_cm, weight_kg):
     bmi = weight_kg / (height_m ** 2)
     return round(bmi, 2)
 
-#Chat loop
-print("Fitness Bot Ready! Type 'quit' to exit.\n")
+#Calorie function
+def calculate_calories(weight, height, age, gender):
+    if gender.lower() == "male":
+        bmr = 10 * weight + 6.25 * height - 5 * age + 5
+    else:
+        bmr = 10 * weight + 6.25 * height - 5 * age - 161
+    return round(bmr)
 
-while True:
-    user_input = input("You: ")
+def get_bot_response(user_input, user_id="default"):
 
-    if user_input.lower() == "quit":
-        break
+    state = user_states.get(user_id)
 
-    # ---- If waiting for height ----
-    if conversation_state == "bmi_height":
-        try:
-            user_data["height"] = float(user_input)
-            conversation_state = "bmi_weight"
-            print("Bot: Enter your weight in kg:")
-        except:
-            print("Bot: Please enter a valid number for height.")
-        continue
+    #BMI flow
+    if state == "bmi_height":
 
-    # ---- If waiting for weight ----
-    if conversation_state == "bmi_weight":
-        try:
-            user_data["weight"] = float(user_input)
-            bmi = calculate_bmi(user_data["height"], user_data["weight"])
+        user_data[user_id] = {"height": float(user_input)}
+        user_states[user_id] = "bmi_weight"
+        return "Enter your weight in kg"
 
-            print(f"Bot: Your BMI is {bmi}")
+    if state == "bmi_weight":
 
-            if bmi < 18.5:
-                print("Bot: You are underweight.")
-            elif 18.5 <= bmi < 24.9:
-                print("Bot: You are in the healthy range.")
-            elif 25 <= bmi < 29.9:
-                print("Bot: You are overweight.")
-            else:
-                print("Bot: You are obese.")
+        user_data[user_id]["weight"] = float(user_input)
 
-            conversation_state = None
-            user_data = {}
-        except:
-            print("Bot: Please enter a valid number for weight.")
-        continue
+        height = user_data[user_id]["height"]
+        weight = user_data[user_id]["weight"]
 
-    # ---- Normal Intent Prediction ----
+        bmi = calculate_bmi(height, weight)
+
+        user_states[user_id] = None
+
+        return f"Your BMI is {bmi}"
+
+
+    #Calorie flow
+    if state == "calorie_weight":
+
+        user_data[user_id] = {"weight": float(user_input)}
+        user_states[user_id] = "calorie_height"
+
+        return "Enter your height in cm"
+
+    if state == "calorie_height":
+
+        user_data[user_id]["height"] = float(user_input)
+        user_states[user_id] = "calorie_age"
+
+        return "Enter your age"
+
+    if state == "calorie_age":
+
+        user_data[user_id]["age"] = int(user_input)
+        user_states[user_id] = "calorie_gender"
+
+        return "Enter your gender (male/female)"
+
+    if state == "calorie_gender":
+
+        user_data[user_id]["gender"] = user_input
+
+        data = user_data[user_id]
+
+        calories = calculate_calories(
+            data["weight"],
+            data["height"],
+            data["age"],
+            data["gender"]
+        )
+
+        user_states[user_id] = None
+
+        return f"Your estimated daily calorie requirement is {calories} kcal"
+
+
+    #Normal intent
     tag, confidence = predict_intent(user_input)
 
-    if confidence < 0.6:
-        print("Bot: I'm not sure I understood that.")
-        continue
+    if confidence < 0.5:
+        return "I'm not sure I understood that."
 
     if tag == "bmi_calculation":
-        print("Bot: Sure! What is your height in cm?")
-        conversation_state = "bmi_height"
-        continue
+        user_states[user_id] = "bmi_height"
+        return "Sure! What is your height in cm?"
 
-    # Default response
-    print(f"Bot: Intent detected → {tag}")
+    if tag == "calorie_calculation":
+        user_states[user_id] = "calorie_weight"
+        return "Let's calculate your calories. Enter your weight in kg"
+
+    return get_response(tag)
+
