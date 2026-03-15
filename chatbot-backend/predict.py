@@ -19,6 +19,7 @@ with open("model/label_encoder.pkl", "rb") as f:
 with open("data/intents.json", "r", encoding="utf-8") as file:
     intents = json.load(file)
 
+
 user_states = {}
 user_data = {}
 
@@ -45,11 +46,8 @@ def calculate_bmi(height_cm, weight_kg):
     return round(bmi, 2)
 
 #Calorie function
-def calculate_calories(weight, height, age, gender):
-    if gender.lower() == "male":
-        bmr = 10 * weight + 6.25 * height - 5 * age + 5
-    else:
-        bmr = 10 * weight + 6.25 * height - 5 * age - 161
+def calculate_calories(weight, height, age):
+    bmr = 10 * weight + 6.25 * height - 5 * age + 5
     return round(bmr)
 
 def get_bot_response(user_input, user_id="default"):
@@ -95,33 +93,24 @@ def get_bot_response(user_input, user_id="default"):
     if state == "calorie_age":
 
         user_data[user_id]["age"] = int(user_input)
-        user_states[user_id] = "calorie_gender"
-
-        return "Enter your gender (male/female)"
-
-    if state == "calorie_gender":
-
-        user_data[user_id]["gender"] = user_input
-
+        
         data = user_data[user_id]
 
         calories = calculate_calories(
             data["weight"],
             data["height"],
-            data["age"],
-            data["gender"]
+            data["age"]
         )
 
         user_states[user_id] = None
 
         return f"Your estimated daily calorie requirement is {calories} kcal"
 
-
     #Normal intent
     tag, confidence = predict_intent(user_input)
 
     if confidence < 0.5:
-        return "I'm not sure I understand that. Here's what I can help you with:\n\n**Fitness Goals**\n- Weight loss tips and fat burning\n- Muscle gain and bulking advice\n\n**Workouts**\n- Home workouts (no equipment)\n- Gym workout plans and splits\n\n**Nutrition**\n- Calorie calculation and daily intake\n- Protein sources and high-protein foods\n- Supplement advice (whey, creatine, etc.)\n\n**Calculators**\n- BMI calculation\n- Daily calorie and protein needs\n\n**Motivation**\n- Staying consistent and disciplined\n- Getting back on track\n\nTry asking something like \"How do I lose weight?\" or \"Give me a gym workout plan\"!"
+        return "I'm not sure I understand that. Here's what I can help you with:\n\n- Weight loss & fat burning\n- Muscle gain & bulking\n- Gym & home workout plans\n- Nutrition & protein sources\n- BMI & calorie calculation\n- Supplement advice\n\nJust ask me anything!"
 
     if tag == "bmi_calculation":
         user_states[user_id] = "bmi_height"

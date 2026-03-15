@@ -35,7 +35,7 @@ function ChatBox() {
 
     setMessages((prev) => [
       ...prev,
-      { text: "Something went wrong connecting to the server.", sender: "bot" }
+      { text: "Please enter a valid integer value", sender: "bot" }
     ]);
   }
 

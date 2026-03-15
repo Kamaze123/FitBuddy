@@ -19,7 +19,9 @@
                 "Wassup homie",
                 "Hows life",
                 "Wassup dawg",
-                "Hey gangsta"
+                "Hey gangsta",
+                "Sup",
+                "Cool"
             ],
             "responses" : [
                 "Hello! How can I help with your fitness goals today?\n\nI can help you with:\n- Weight loss & fat burning\n- Muscle gain & bulking\n- Gym & home workout plans\n- Nutrition & protein sources\n- BMI & calorie calculation\n- Supplement advice\n\nJust ask me anything!"
@@ -270,7 +272,7 @@
                 "Today was really terrible"
             ],
             "responses" : [
-                    "Hey, it's okay. Everyone has days like this — even the most dedicated athletes.\n\nYou don't have to crush a workout today. But here's the thing:\n\n**Motivation is temporary. Discipline is what keeps you going.**\n\n- Start tiny — even a 10-minute walk counts.\n- Remember your why — why did you start?\n- Don't break the chain — showing up on bad days is what separates people who transform from people who don't.\n- Progress isn't linear — bad days are part of the journey, not a sign to quit.\n\n\"You don't have to be great to start, but you have to start to be great.\"\n\nIf you're feeling genuinely overwhelmed, please talk to someone you trust. Your mental health matters more than any workout."
+                    "Hey, it's okay. Everyone has days like this — even the most dedicated athletes.\n\nYou don't have to crush a workout today. But here's the thing:\n\n**Motivation is temporary. Discipline is what keeps you going.**\n\n- Start tiny, even a 10-minute walk counts.\n- Remember your why, why did you start?\n- Don't break the chain, showing up on bad days is what separates people who transform from people who don't.\n- Progress isn't linear, bad days are part of the journey, not a sign to quit.\n\n\"You don't have to be great to start, but you have to start to be great.\"\n\nIf you're feeling genuinely overwhelmed, please talk to someone you trust. Your mental health matters more than any workout."
             ]
         }
     ]
