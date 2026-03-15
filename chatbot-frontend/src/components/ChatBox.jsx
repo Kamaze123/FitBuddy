@@ -22,13 +22,20 @@ function ChatBox() {
   }, [messages]);
 
   return (
-    <div className="flex flex-col h-[100dvh] bg-zinc-900 text-white overflow-hidden">
+    <div className="flex flex-col h-[100dvh] bg-black text-white overflow-hidden">
 
-      {/* TOP SECTION — expands to push input down once chat starts */}
-      <div className={`flex flex-col transition-all duration-500 ease-in-out
-        ${hasMessages ? "flex-1 overflow-y-auto" : "flex-none h-0"}`}
+      {/* Message area — animates via max-height */}
+      <div
+        style={{
+          maxHeight: hasMessages ? "100vh" : "0px",
+          opacity: hasMessages ? 1 : 0,
+          transition: "max-height 600ms ease-in-out, opacity 400ms ease-in-out",
+          overflow: "hidden",
+          flex: hasMessages ? "1 1 0" : "0 0 0",
+        }}
+        className="overflow-y-auto custom-scroll"
       >
-        <div className="px-3 sm:px-6 md:px-8 py-4 sm:py-6 max-w-2xl mx-auto w-full">
+        <div className="max-w-2xl mx-auto w-full px-4 py-6">
           {messages.map((msg, i) => (
             <MessageBubble key={i} message={msg.text} sender={msg.sender} />
           ))}
@@ -36,25 +43,41 @@ function ChatBox() {
         </div>
       </div>
 
-      {/* BOTTOM SECTION — always in flow, vertically centered when no messages */}
-      <div className={`flex flex-col items-center justify-center transition-all duration-500 ease-in-out px-3 sm:px-6 md:px-8
-        ${hasMessages ? "pb-4 sm:pb-6 justify-end" : "flex-1 justify-center"}`}
+      {/* Hero + Input */}
+      <div
+        style={{
+          transition: "flex 600ms ease-in-out, justify-content 600ms ease-in-out",
+        }}
+        className={`flex flex-col items-center px-4
+          ${hasMessages ? "justify-end pb-6 sm:pb-8" : "flex-1 justify-center gap-6"}`}
       >
-        {/* Hero text — fades out when chat starts */}
-        <div className={`text-center mb-5 transition-all duration-400 ease-in-out
-          ${hasMessages ? "opacity-0 h-0 mb-0 overflow-hidden" : "opacity-100"}`}
+        {/* Hero text — collapses smoothly */}
+        <div
+          style={{
+            maxHeight: hasMessages ? "0px" : "200px",
+            opacity: hasMessages ? 0 : 1,
+            overflow: "hidden",
+            transition: "max-height 500ms ease-in-out, opacity 300ms ease-in-out",
+            marginBottom: hasMessages ? "0px" : undefined,
+          }}
+          className="text-center"
         >
-          <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold text-zinc-300 tracking-tight">
-            What's your goal today?
-          </h1>
-          <p className="text-zinc-500 text-sm sm:text-base mt-2">
-            Your AI fitness companion is ready
+          <p className="text-lg sm:text-xl md:text-2xl text-white font-light tracking-wide pb-1">
+            Hello I am{" "}
+            <span className="text-blue-400 font-semibold">FitBuddy</span>
+          </p>
+          <p className="text-lg sm:text-xl md:text-2xl text-white font-light mt-1 pb-4">
+            Your AI fitness coach
           </p>
         </div>
 
         {/* Input box */}
-        <div className={`w-full transition-all duration-500 ease-in-out
-          ${hasMessages ? "max-w-2xl" : "max-w-xs sm:max-w-md md:max-w-xl"}`}
+        <div
+          style={{
+            width: "100%",
+            maxWidth: hasMessages ? "672px" : "560px",
+            transition: "max-width 500ms ease-in-out",
+          }}
         >
           <ChatInput sendMessage={sendMessage} />
         </div>
