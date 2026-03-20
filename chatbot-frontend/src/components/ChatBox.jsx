@@ -12,7 +12,7 @@ function ChatBox() {
     
     try {
 
-    const res = await fetch("https://fit-buddy-jkue.onrender.com", {
+    const res = await fetch("https://fit-buddy-jkue.onrender.com/chat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
