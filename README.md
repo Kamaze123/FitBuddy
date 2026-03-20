@@ -1,4 +1,4 @@
-# FitBuddy 🏋️
+# FitBuddy
 
 An AI-powered fitness chatbot that helps users with workout plans, nutrition advice, BMI calculation, calorie estimation, and motivation. Built with a React frontend and a Flask backend using a trained machine learning model for intent classification.
 
@@ -130,4 +130,4 @@ The intent classifier is a scikit-learn pipeline consisting of a TF-IDF vectoriz
 
 ## Acknowledgements
 
-Built as a personal project to learn ML model deployment with a full-stack web application.
+Built as a personal project to learn ML model deployment with a full-stack web application. Initially done using neural networks with tensorflow, test accuracy upto 85 percent. But render didn't support tensorflow deployment, hence I switched to a different learning model. This model has test accuracy of 75-80 percent. I was disappointed that I wasn't able to use my initial model but I guess that's part of life. 
