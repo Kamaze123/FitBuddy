@@ -1,6 +1,6 @@
 flask
 flask-cors
 gunicorn
-tensorflow==2.15.0
-numpy==1.26.4
-protobuf==3.20.3
+tensorflow-cpu
+numpy
+protobuf

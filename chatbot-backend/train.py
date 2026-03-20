@@ -10,56 +10,71 @@ from sklearn.model_selection import train_test_split
 import pickle
 from utils import load_intents, prepare_data, vectorize_text, encode_labels
 
-#Loading data
+# Load data
 data = load_intents("data/intents.json")
 patterns, tags = prepare_data(data)
 
-#Vectorize
+# Vectorize
 X, vectorizer = vectorize_text(patterns)
 
-#Encode labels
+# Encode labels
 y, label_encoder = encode_labels(tags)
 y = to_categorical(y)
 
-#Train-test split
+# Train-test split
 X_train, X_test, y_train, y_test = train_test_split(
-    X.toarray(), y, test_size = 0.2, random_state=42
+    X.toarray(), y, test_size=0.2, random_state=42
 )
 
-
-#Train Neural Network
+# Build model
 model = Sequential([
-    Dense(64, activation='relu', input_shape=(X_train.shape[1],),  kernel_regularizer=regularizers.l2(0.001)),
-    Dropout(0.4),
-    Dense(32, activation='relu',  kernel_regularizer=regularizers.l2(0.001)),
+    Dense(64, activation='relu', input_shape=(X_train.shape[1],), kernel_regularizer=regularizers.l2(0.01)),
     Dropout(0.3),
+    Dense(32, activation='relu', kernel_regularizer=regularizers.l2(0.01)),
+    Dropout(0.2),
     Dense(y.shape[1], activation='softmax')
 ])
 
-
 sgd = SGD(learning_rate=0.01, momentum=0.9, nesterov=True)
 
-#using SGD as optimizer for better training accuracy
 model.compile(
-    optimizer=sgd,
+    optimizer='adam',
     loss='categorical_crossentropy',
     metrics=['accuracy']
 )
 
-
-#Early stopping to prevent memorization
+# Early stopping
 early_stop = EarlyStopping(
     monitor='val_loss',
-    patience=5,
+    patience=10,
     restore_best_weights=True
 )
 
-history = model.fit(X_train, y_train, epochs = 100, batch_size = 8, verbose = 1)
+# Train
+history = model.fit(
+    X_train, y_train,
+    epochs=200,
+    batch_size=8,
+    validation_data=(X_test, y_test),
+    callbacks=[early_stop],
+    verbose=1
+)
 
 loss, accuracy = model.evaluate(X_test, y_test)
 print(f"\nTest Accuracy: {accuracy:.2f}")
 
-#Saving model
+from sklearn.metrics import classification_report
+import numpy as np
+
+y_pred = model.predict(X_test)
+y_pred_classes = np.argmax(y_pred, axis=1)
+y_true_classes = np.argmax(y_test, axis=1)
+
+print(classification_report(y_true_classes, y_pred_classes, 
+      target_names=label_encoder.classes_))
+
+
+# Save
 model.save("model/chatbot_model.keras")
 
 with open("model/vectorizer.pkl", "wb") as f:
