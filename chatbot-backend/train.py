@@ -1,84 +1,24 @@
-import numpy as np
-import tensorflow as tf
-from tensorflow.keras import Sequential
-from tensorflow.keras import regularizers
-from tensorflow.keras.layers import Dense, Dropout
-from tensorflow.keras.utils import to_categorical
-from tensorflow.keras.callbacks import EarlyStopping
-from tensorflow.keras.optimizers import SGD
-from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.pipeline import Pipeline
+from sklearn.svm import LinearSVC
 import pickle
-from utils import load_intents, prepare_data, vectorize_text, encode_labels
+from utils import load_intents, prepare_data, encode_labels
+from sklearn.model_selection import cross_val_score
 
-# Load data
 data = load_intents("data/intents.json")
 patterns, tags = prepare_data(data)
-
-# Vectorize
-X, vectorizer = vectorize_text(patterns)
-
-# Encode labels
 y, label_encoder = encode_labels(tags)
-y = to_categorical(y)
 
-# Train-test split
-X_train, X_test, y_train, y_test = train_test_split(
-    X.toarray(), y, test_size=0.2, random_state=42
-)
-
-# Build model
-model = Sequential([
-    Dense(64, activation='relu', input_shape=(X_train.shape[1],), kernel_regularizer=regularizers.l2(0.01)),
-    Dropout(0.3),
-    Dense(32, activation='relu', kernel_regularizer=regularizers.l2(0.01)),
-    Dropout(0.2),
-    Dense(y.shape[1], activation='softmax')
+model = Pipeline([
+    ('tfidf', TfidfVectorizer(ngram_range=(1,2), max_features=500)),
+    ('clf', MultinomialNB(alpha=0.1))
 ])
 
-sgd = SGD(learning_rate=0.01, momentum=0.9, nesterov=True)
+scores = cross_val_score(model, patterns, y, cv=5, scoring='accuracy')
+print(f"CV Accuracy: {scores.mean():.2f} (+/- {scores.std():.2f})")
 
-model.compile(
-    optimizer='adam',
-    loss='categorical_crossentropy',
-    metrics=['accuracy']
-)
+model.fit(patterns, y)
 
-# Early stopping
-early_stop = EarlyStopping(
-    monitor='val_loss',
-    patience=10,
-    restore_best_weights=True
-)
-
-# Train
-history = model.fit(
-    X_train, y_train,
-    epochs=200,
-    batch_size=8,
-    validation_data=(X_test, y_test),
-    callbacks=[early_stop],
-    verbose=1
-)
-
-loss, accuracy = model.evaluate(X_test, y_test)
-print(f"\nTest Accuracy: {accuracy:.2f}")
-
-from sklearn.metrics import classification_report
-import numpy as np
-
-y_pred = model.predict(X_test)
-y_pred_classes = np.argmax(y_pred, axis=1)
-y_true_classes = np.argmax(y_test, axis=1)
-
-print(classification_report(y_true_classes, y_pred_classes, 
-      target_names=label_encoder.classes_))
-
-
-# Save
-model.save("model/chatbot_model.keras")
-
-with open("model/vectorizer.pkl", "wb") as f:
-    pickle.dump(vectorizer, f)
-
-with open("model/label_encoder.pkl", "wb") as f:
-    pickle.dump(label_encoder, f)
+pickle.dump(model, open("model/chatbot_model.pkl", "wb"))
+pickle.dump(label_encoder, open("model/label_encoder.pkl", "wb"))
