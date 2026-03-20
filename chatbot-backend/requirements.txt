@@ -1,6 +1,5 @@
 flask
 flask-cors
 gunicorn
-tf-keras
+scikit-learn
 numpy
-protobuf
