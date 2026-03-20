@@ -1,8 +1,8 @@
 {
-    "intents" :[
+    "intents": [
         {
-            "tag" : "greeting",
-            "patterns" : [  
+            "tag": "greeting",
+            "patterns": [
                 "Hi",
                 "Hello",
                 "Hey",
@@ -21,16 +21,43 @@
                 "Wassup dawg",
                 "Hey gangsta",
                 "Sup",
-                "Cool"
+                "Cool",
+                "Good afternoon",
+                "Good night",
+                "Howdy",
+                "Hey there",
+                "What's good",
+                "Greetings",
+                "Hey buddy how are you",
+                "What is up",
+                "Yo yo",
+                "Hiya",
+                "Hey man",
+                "Hi buddy",
+                "Hello there",
+                "Hey pal",
+                "Good to see you",
+                "How are you",
+                "How are you doing",
+                "How do you do",
+                "Nice to meet you",
+                "Start",
+                "Begin",
+                "Help",
+                "Hey bot",
+                "Hello bot",
+                "Hi bot",
+                "Yo bot",
+                "Anyone there",
+                "You there"
             ],
-            "responses" : [
+            "responses": [
                 "Hello! How can I help with your fitness goals today?\n\nI can help you with:\n- Weight loss & fat burning\n- Muscle gain & bulking\n- Gym & home workout plans\n- Nutrition & protein sources\n- BMI & calorie calculation\n- Supplement advice\n\nJust ask me anything!"
             ]
         },
-
         {
-            "tag" : "goodbye",
-            "patterns" : [
+            "tag": "goodbye",
+            "patterns": [
                 "Bye",
                 "Goodbye",
                 "See you",
@@ -47,16 +74,42 @@
                 "Gotta go",
                 "See you soon",
                 "Take care",
-                "I'm done for today"
+                "I'm done for today",
+                "Farewell",
+                "I'm out",
+                "Laters",
+                "Ciao",
+                "Good night",
+                "Night",
+                "I'll talk to you later",
+                "I have to go now",
+                "That's all for now",
+                "I'm signing off",
+                "See you around",
+                "Until next time",
+                "I'll be back",
+                "Catch ya later",
+                "Thanks bye",
+                "Okay bye",
+                "Alright bye",
+                "Bye for now",
+                "I'm going now",
+                "Have a nice day",
+                "Have a great day",
+                "Good day",
+                "I'm closing the app",
+                "I'm done",
+                "That will be all",
+                "Exit",
+                "Quit"
             ],
-            "responses" : [
+            "responses": [
                 "Goodbye! Stay fit and stay consistent.\n\nRemember to eat well, train hard, and sleep enough. Come back anytime you need help!"
             ]
         },
-
         {
-            "tag" : "weight_loss",
-            "patterns" : [
+            "tag": "weight_loss",
+            "patterns": [
                 "How do I lose weight?",
                 "I want to burn fat",
                 "Best workouts for fat loss",
@@ -73,16 +126,46 @@
                 "Fastest way to burn fat?",
                 "Workout for losing belly fat",
                 "How do I get lean?",
-                "Best fat loss routine?"
+                "Best fat loss routine?",
+                "I want to lose 10kg",
+                "I want to lose 5kg",
+                "I'm trying to shed some pounds",
+                "What exercise burns the most fat",
+                "How do i get a flat stomach",
+                "Is walking enough to lose weight",
+                "How long does it take to lose weight",
+                "How to reduce thigh fat",
+                "How to reduce arm fat",
+                "I want to get fit",
+                "How to lose weight without gym",
+                "How to lose weight at home",
+                "Best diet for fat loss",
+                "How many calories to cut to lose weight",
+                "Is running good for losing weight",
+                "How to speed up my metabolism",
+                "Why am I not losing weight",
+                "How to lose weight fast naturally",
+                "Quickest way to lose belly fat",
+                "What cardio is best for fat loss",
+                "How to burn calories fast",
+                "Tips to reduce body fat percentage",
+                "How to get abs",
+                "How to get a six pack",
+                "How to lose love handles",
+                "I want to be skinny",
+                "How to tone my body",
+                "How to cut body fat",
+                "Weight loss tips for beginners",
+                "How do I stop being fat",
+                "I need to lose weight urgently"
             ],
-            "responses" : [
+            "responses": [
                 "To lose weight effectively:\n\n1. **Create a calorie deficit** — eat slightly fewer calories than you burn.\n2. **Strength train** 3–4x per week to preserve muscle while losing fat.\n3. **Add cardio** — 20–30 mins of walking, cycling, or HIIT.\n4. **Prioritize protein** — it keeps you full and protects muscle.\n5. **Sleep 7–8 hours** — poor sleep increases hunger hormones.\n6. **Stay hydrated** — drink at least 2–3 liters of water daily.\n\n**Beginner Fat-Loss Workout Plan:**\n- Monday: 30 min brisk walk + full body strength (squats, push-ups, rows)\n- Tuesday: 20 min HIIT (30s on, 30s off)\n- Wednesday: Rest or light yoga\n- Thursday: 30 min strength training\n- Friday: 20 min cardio of your choice\n- Saturday: Active rest (walk, stretch)\n- Sunday: Full rest\n\nAim for 0.5–1 kg of fat loss per week for sustainable results."
             ]
         },
-
         {
-            "tag" : "muscle_gain",
-            "patterns" : [
+            "tag": "muscle_gain",
+            "patterns": [
                 "How do I gain muscle?",
                 "Best workouts for muscle growth",
                 "I want to bulk up",
@@ -97,16 +180,47 @@
                 "Muscle building tips",
                 "How do I get stronger",
                 "How to grow muscles naturally?",
-                "How to increase strength?"
+                "How to increase strength?",
+                "I want to get jacked",
+                "How to get a bigger chest",
+                "How to get bigger legs",
+                "How to build a bigger back",
+                "How to get broad shoulders",
+                "I want to gain mass",
+                "How to gain weight and muscle",
+                "Best exercises for mass",
+                "How to increase muscle size",
+                "What is progressive overload",
+                "How many sets and reps for muscle gain",
+                "How to build muscle without steroids",
+                "Natural muscle building tips",
+                "How to build muscle as a beginner",
+                "Beginner muscle gain program",
+                "How long does it take to build muscle",
+                "Why am I not gaining muscle",
+                "How to break a plateau",
+                "How to get toned muscles",
+                "Best compound exercises",
+                "What is hypertrophy training",
+                "How to train for size",
+                "How to increase bench press",
+                "How to increase squat",
+                "How to get a bigger butt",
+                "Glute exercises",
+                "How to grow biceps",
+                "How to grow triceps",
+                "How to get V shape body",
+                "I want to look muscular",
+                "How to put on size",
+                "Workout routine for mass"
             ],
-            "responses" : [
+            "responses": [
                 "To build muscle efficiently:\n\n1. **Progressive overload** — gradually increase weight or reps over time.\n2. **Compound lifts** — squats, deadlifts, bench press, and rows give the most bang for your buck.\n3. **Eat enough protein** — aim for 1.6–2.2g per kg of bodyweight daily.\n4. **Calorie surplus** — eat slightly more than your maintenance calories.\n5. **Rest and recover** — muscles grow during rest, not during the workout.\n6. **Sleep 7–9 hours** — this is when growth hormone is released.\n\n**Sample Weekly Gym Split (PPL):**\n- Monday: Push — Bench Press, Overhead Press, Triceps\n- Tuesday: Pull — Lat Pulldown, Rows, Bicep Curls\n- Wednesday: Legs — Squats, Romanian Deadlift, Leg Press\n- Thursday: Rest\n- Friday: Push\n- Saturday: Pull\n- Sunday: Legs\n\nConsistency over months beats any short-term program."
             ]
         },
-
         {
-            "tag" : "bmi_calculation",
-            "patterns" : [
+            "tag": "bmi_calculation",
+            "patterns": [
                 "Calculate my BMI",
                 "What is my BMI?",
                 "Can you check my BMI?",
@@ -120,13 +234,38 @@
                 "Can you calculate BMI for me?",
                 "How do I know my BMI?",
                 "Check if my BMI is normal",
-                "BMI value calculation"
+                "BMI value calculation",
+                "What is a healthy BMI?",
+                "Am I overweight?",
+                "Am I underweight?",
+                "Am I obese?",
+                "What is the normal BMI range?",
+                "How to check if I am at a healthy weight",
+                "What does BMI mean?",
+                "Is BMI accurate?",
+                "How is BMI calculated?",
+                "BMI formula",
+                "What is body mass index",
+                "Find my ideal weight",
+                "What should my weight be for my height",
+                "Ideal weight for my height",
+                "Am I at a healthy weight",
+                "Check my weight status",
+                "Tell me if I am fat",
+                "What weight category am I in",
+                "My height is 170cm what should I weigh",
+                "BMI check",
+                "Body weight index",
+                "Calculate body fat index",
+                "Weight to height ratio",
+                "How do I know if I am healthy weight",
+                "I want to know my BMI",
+                "Give me my BMI"
             ],
-            "responses" : [
+            "responses": [
                 "temp"
             ]
         },
-
         {
             "tag": "supplements",
             "patterns": [
@@ -142,18 +281,47 @@
                 "What supplements should I take?",
                 "Is creatine safe?",
                 "Is whey protein bad for health?",
-                "How many grams of protein in whey protein ?",
+                "How many grams of protein in whey protein?",
                 "What is whey protein?",
-                "What is creatine?"
+                "What is creatine?",
+                "Should I take pre workout?",
+                "Is pre workout safe?",
+                "Best protein supplement",
+                "Should I take BCAA?",
+                "What are BCAAs?",
+                "Do I need protein powder to build muscle?",
+                "Is mass gainer good?",
+                "Should I take mass gainer?",
+                "What is mass gainer?",
+                "Difference between whey and casein protein",
+                "When should I take protein powder?",
+                "When should I take creatine?",
+                "How much creatine should I take?",
+                "Does creatine cause hair loss?",
+                "Does creatine cause kidney damage?",
+                "Side effects of creatine",
+                "Side effects of whey protein",
+                "Is whey protein good for beginners?",
+                "Natural supplements for muscle growth",
+                "Best supplement for fat loss",
+                "What is omega 3 good for",
+                "Should I take multivitamins?",
+                "Vitamin D for fitness",
+                "Zinc and magnesium for fitness",
+                "Are fat burners safe?",
+                "Do fat burners work?",
+                "Best supplements for beginners",
+                "How to choose a protein powder",
+                "Whey isolate vs whey concentrate",
+                "Is plant protein as good as whey"
             ],
             "responses": [
-                "Supplements are optional.\n\n•Whey protein is a premium protein derived from cow's milk, rich in beneficial amino acids. \n• Whey powder helps if you can't meet protein goals.\n• Creatine is a highly researched, natural compound that boosts energy production in muscles, leading to increased strength, power, and lean muscle growth. \n• Creatine improves strength safely.\n• Focus on diet first before supplements."
+                "Supplements are optional.\n\n• Whey protein is a premium protein derived from cow's milk, rich in beneficial amino acids.\n• Whey powder helps if you can't meet protein goals.\n• Creatine is a highly researched, natural compound that boosts energy production in muscles, leading to increased strength, power, and lean muscle growth.\n• Creatine improves strength safely.\n• Focus on diet first before supplements."
             ]
         },
-
         {
-            "tag" : "calorie_calculation",
-            "patterns" : [
+            "tag": "calorie_calculation",
+            "patterns": [
                 "How many calories should I eat?",
                 "Calculate my daily calories",
                 "Calorie requirement",
@@ -170,16 +338,43 @@
                 "How much should I eat to lose weight?",
                 "Calories for muscle gain?",
                 "How much protein should I take?",
-                "How much protein should I take in a day?"
+                "How much protein should I take in a day?",
+                "How many calories to build muscle",
+                "How many calories to lose fat",
+                "What is TDEE?",
+                "How to calculate TDEE",
+                "What is a calorie deficit?",
+                "What is a calorie surplus?",
+                "How many calories in a day for a man",
+                "How many calories in a day for a woman",
+                "How to track calories",
+                "Should I count calories?",
+                "How many calories should I cut to lose weight",
+                "How many extra calories to gain muscle",
+                "What is my basal metabolic rate",
+                "How to calculate BMR",
+                "How many calories does exercise burn",
+                "Calorie intake for weight loss",
+                "How many calories should I eat to maintain weight",
+                "Daily protein requirement",
+                "How much protein per kg of body weight",
+                "How much fat should I eat per day",
+                "How many carbs should I eat",
+                "Macros for weight loss",
+                "Macros for muscle gain",
+                "What are macros?",
+                "How to calculate macros",
+                "Calorie needs for gym",
+                "How many calories for cutting",
+                "How many calories for bulking"
             ],
-            "responses" : [
+            "responses": [
                 "temp"
             ]
         },
-
         {
-            "tag" : "protein_sources",
-            "patterns" : [
+            "tag": "protein_sources",
+            "patterns": [
                 "Best protein foods",
                 "High protein diet",
                 "Sources of protein",
@@ -194,16 +389,46 @@
                 "What are good protein options?",
                 "High protein vegetarian foods",
                 "Protein diet ideas",
-                "Best foods for muscle recovery?"
+                "Best foods for muscle recovery?",
+                "Vegan protein sources",
+                "Indian protein rich foods",
+                "High protein Indian food",
+                "Protein rich foods for vegetarians in India",
+                "What to eat for protein in India",
+                "Cheap protein sources",
+                "Affordable high protein foods",
+                "Protein foods without meat",
+                "Egg protein content",
+                "How much protein in chicken",
+                "How much protein in paneer",
+                "How much protein in dal",
+                "How much protein in milk",
+                "High protein breakfast ideas",
+                "High protein lunch ideas",
+                "High protein dinner ideas",
+                "High protein snacks",
+                "What to eat after workout",
+                "Post workout meal ideas",
+                "Pre workout meal ideas",
+                "What to eat before gym",
+                "What to eat after gym",
+                "Best foods for muscle building",
+                "Foods that help build muscle",
+                "Foods that are high in protein",
+                "Is paneer good for protein",
+                "Is tofu a good protein source",
+                "Best plant based protein foods",
+                "How to get enough protein without meat",
+                "High protein low fat foods",
+                "Protein rich diet plan"
             ],
-            "responses" : [
+            "responses": [
                 "Here are the best protein sources:\n\n**Animal-Based:**\n- Chicken breast — ~31g per 100g\n- Eggs — ~6g per egg\n- Tuna / Salmon — ~25g per 100g\n- Cottage cheese (paneer) — ~11g per 100g\n- Greek yogurt — ~10g per 100g\n- Milk — ~3.4g per 100ml\n\n**Plant-Based:**\n- Lentils (dal) — ~9g per 100g cooked\n- Chickpeas — ~8g per 100g cooked\n- Tofu — ~8g per 100g\n- Edamame — ~11g per 100g\n- Quinoa — ~4g per 100g cooked\n- Peanuts / Peanut butter — ~25g per 100g\n\n**Tips to increase protein intake:**\n- Add eggs or Greek yogurt to breakfast.\n- Snack on peanuts or roasted chickpeas.\n- Include a protein source in every meal.\n- Consider whey protein if you still fall short."
             ]
         },
-
         {
-            "tag" : "home_workout",
-            "patterns" : [
+            "tag": "home_workout",
+            "patterns": [
                 "Workout at home",
                 "Home exercise routine",
                 "No equipment workout",
@@ -220,16 +445,45 @@
                 "Workout plan without equipment",
                 "Give me some workouts that I can do",
                 "Give me some workouts that I can do quick",
-                "Quick and easy workouts"
+                "Quick and easy workouts",
+                "How to workout without going to gym",
+                "Can I build muscle at home?",
+                "Home workout for weight loss",
+                "Home workout for muscle gain",
+                "Calisthenics workout",
+                "Calisthenics for beginners",
+                "Push up variations",
+                "How to do a proper push up",
+                "How to do pull ups at home",
+                "Home chest workout",
+                "Home back workout",
+                "Home leg workout",
+                "Home ab workout",
+                "Core workout at home",
+                "Abs workout at home",
+                "How to get fit at home",
+                "Workout in small space",
+                "No gym workout plan",
+                "Best bodyweight exercises",
+                "How to do burpees",
+                "HIIT workout at home",
+                "Cardio workout at home",
+                "Morning workout at home",
+                "10 minute home workout",
+                "20 minute home workout",
+                "30 minute home workout",
+                "Full body workout at home",
+                "Home workout routine for beginners",
+                "I don't have a gym membership",
+                "Workout with no equipment"
             ],
-            "responses" : [
+            "responses": [
                 "Here's a solid no-equipment home workout you can do anywhere:\n\n**Warm Up (5 mins)**\n- Jumping jacks — 1 min\n- Arm circles + leg swings — 1 min\n- High knees — 1 min\n- Hip rotations — 1 min\n\n**Main Workout (3 rounds)**\n- Push-ups — 15 reps\n- Bodyweight squats — 20 reps\n- Plank — 40 seconds\n- Lunges — 12 reps each leg\n- Glute bridges — 20 reps\n- Mountain climbers — 30 seconds\n\n**Cool Down (3 mins)**\n- Child's pose, quad stretch, hamstring stretch\n\nRest 60 seconds between rounds. As you get stronger, add more rounds or try harder variations like archer push-ups or jump squats."
             ]
         },
-
         {
-            "tag" : "gym_workout",
-            "patterns" : [
+            "tag": "gym_workout",
+            "patterns": [
                 "Gym workout plan",
                 "Best gym exercises",
                 "Workout routine for gym",
@@ -244,16 +498,47 @@
                 "Full body gym workout",
                 "Gym workout for noobs",
                 "Workout plan for muscle building",
-                "Best strength exercises at gym"
+                "Best strength exercises at gym",
+                "How many days should I go to the gym",
+                "Is 3 days a week enough for gym",
+                "5 day gym split",
+                "4 day gym split",
+                "3 day gym split",
+                "PPL workout plan",
+                "Push pull legs explained",
+                "Upper lower split workout",
+                "Arnold split workout",
+                "Bro split workout",
+                "Full body workout plan",
+                "Best beginner gym program",
+                "Starting strength program",
+                "How to start going to the gym",
+                "First day at gym tips",
+                "What to do at gym as a beginner",
+                "Gym exercises for chest",
+                "Gym exercises for back",
+                "Gym exercises for legs",
+                "Gym exercises for shoulders",
+                "Gym exercises for arms",
+                "How to use gym machines",
+                "Free weights vs machines",
+                "How to deadlift",
+                "How to squat properly",
+                "How to bench press",
+                "How to do lat pulldown",
+                "How to do barbell rows",
+                "Best compound movements",
+                "Gym workout 6 days a week",
+                "How long should a gym session be",
+                "Gym tips for beginners"
             ],
-            "responses" : [
+            "responses": [
                 "Here's a beginner-friendly Push Pull Legs (PPL) gym split:\n\n**Day 1 — Push (Chest, Shoulders, Triceps)**\n- Bench Press — 4×8\n- Overhead Press — 3×10\n- Incline Dumbbell Press — 3×10\n- Lateral Raises — 3×15\n- Tricep Pushdown — 3×12\n\n**Day 2 — Pull (Back, Biceps)**\n- Lat Pulldown — 4×10\n- Seated Cable Row — 3×10\n- Dumbbell Row — 3×10\n- Face Pulls — 3×15\n- Bicep Curls — 3×12\n\n**Day 3 — Legs (Quads, Hamstrings, Glutes)**\n- Squats — 4×8\n- Romanian Deadlift — 3×10\n- Leg Press — 3×12\n- Leg Curl — 3×12\n- Calf Raises — 4×15\n\nRepeat twice a week with one rest day in between. Focus on form over weight as a beginner — progressive overload is the key to growth."
             ]
         },
-
         {
-            "tag" : "motivation",
-            "patterns" : [
+            "tag": "motivation",
+            "patterns": [
                 "I feel lazy",
                 "Motivate me",
                 "I don't feel like working out",
@@ -269,10 +554,41 @@
                 "I don't feel like training today",
                 "I am going to stop going to the gym",
                 "I feel very depressed today",
-                "Today was really terrible"
+                "Today was really terrible",
+                "I have no energy to workout",
+                "I keep skipping gym",
+                "I can't stay consistent",
+                "How do I stop being lazy",
+                "I give up",
+                "I want to give up",
+                "Fitness is too hard",
+                "I'm not seeing results",
+                "I've been working out but not seeing progress",
+                "Why is fitness so hard",
+                "I hate working out",
+                "I don't enjoy exercise",
+                "Working out is boring",
+                "How to make working out fun",
+                "How to build a habit of working out",
+                "How to stay motivated to exercise",
+                "I missed the gym today",
+                "I missed gym for a week",
+                "I fell off my routine",
+                "How to get back on track",
+                "I feel like a failure",
+                "Nothing is working",
+                "I feel hopeless",
+                "I feel stressed",
+                "I am overwhelmed",
+                "Life is hard",
+                "I am struggling",
+                "I feel like quitting everything",
+                "How to stay positive",
+                "I need encouragement",
+                "Tell me something motivating"
             ],
-            "responses" : [
-                    "Hey, it's okay. Everyone has days like this — even the most dedicated athletes.\n\nYou don't have to crush a workout today. But here's the thing:\n\n**Motivation is temporary. Discipline is what keeps you going.**\n\n- Start tiny, even a 10-minute walk counts.\n- Remember your why, why did you start?\n- Don't break the chain, showing up on bad days is what separates people who transform from people who don't.\n- Progress isn't linear, bad days are part of the journey, not a sign to quit.\n\n\"You don't have to be great to start, but you have to start to be great.\"\n\nIf you're feeling genuinely overwhelmed, please talk to someone you trust. Your mental health matters more than any workout."
+            "responses": [
+                "Hey, it's okay. Everyone has days like this — even the most dedicated athletes.\n\nYou don't have to crush a workout today. But here's the thing:\n\n**Motivation is temporary. Discipline is what keeps you going.**\n\n- Start tiny, even a 10-minute walk counts.\n- Remember your why, why did you start?\n- Don't break the chain, showing up on bad days is what separates people who transform from people who don't.\n- Progress isn't linear, bad days are part of the journey, not a sign to quit.\n\n\"You don't have to be great to start, but you have to start to be great.\"\n\nIf you're feeling genuinely overwhelmed, please talk to someone you trust. Your mental health matters more than any workout."
             ]
         }
     ]
