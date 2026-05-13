@@ -131,3 +131,4 @@ The intent classifier is a scikit-learn pipeline consisting of a TF-IDF vectoriz
 ## Acknowledgements
 
 Built as a personal project to learn ML model deployment with a full-stack web application. Initially done using neural networks with tensorflow, test accuracy upto 85 percent. But render didn't support tensorflow deployment, hence I switched to a different learning model. This model has test accuracy of 75-80 percent. I was disappointed that I wasn't able to use my initial model but I guess that's part of life. 
+Also, when you use the vercel website, it might not work at the start, cuz the render backend goes to sleep due to inactivity. It might take around 2-3 mins to kickstart.
